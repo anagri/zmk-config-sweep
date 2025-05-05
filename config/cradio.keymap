@@ -198,7 +198,7 @@
         lt_kp: lt_kp {
             compatible = "zmk,behavior-hold-tap";
             label = "LT_KP";
-            bindings = <&mo>, <&kp>;
+            bindings = <&to>, <&kp>;
 
             #binding-cells = <2>;
             tapping-term-ms = <200>;
@@ -222,6 +222,11 @@
             bindings = <&mod_brackets>;
             key-positions = <26 29>;
         };
+
+        mouse_layer {
+            bindings = <&to 2>;
+            key-positions = <31 32>;
+        };
     };
 
     keymap {
@@ -238,10 +243,10 @@
 
         fn {
             bindings = <
-&kp F1             &kp F2             &kp F3              &kp F4                    &kp F5     &td_f6_play_pause  &kp F7          &f8_vol_mute     &f9_vol_dn           &f10_vol_up
-&hm LGUI NUMBER_1  &hm LALT NUMBER_2  &hm LCTRL NUMBER_3  &hm_shift LSHFT NUMBER_4  &kp N5     &mm_left           &mm_down        &mm_up           &mm_right            &hm RCMD F11
-&kp N6             &kp N7             &kp N8              &kp N9                    &kp N0     &kp LA(LEFT)       &mm_left_click  &mm_right_click  &kp RA(RIGHT_ARROW)  &kp F12
-                                                          &kp MINUS                 &kp TAB    &trans             &kp EQUAL
+&kp F1             &kp F2             &kp F3              &kp F4                    &kp F5     &td_f6_play_pause           &kp F7                &f8_vol_mute       &f9_vol_dn            &f10_vol_up
+&hm LGUI NUMBER_1  &hm LALT NUMBER_2  &hm LCTRL NUMBER_3  &hm_shift LSHFT NUMBER_4  &kp N5     &hm_shift RSHFT LEFT_ARROW  &hm RCTRL DOWN_ARROW  &hm RALT UP_ARROW  &hm RCMD RIGHT_ARROW  &hm RCMD F11
+&kp N6             &kp N7             &kp N8              &kp N9                    &kp N0     &kp LA(LEFT)                &kp PAGE_DOWN         &kp PAGE_UP        &kp RA(RIGHT_ARROW)   &kp F12
+                                                          &kp MINUS                 &kp TAB    &trans                      &kp EQUAL
             >;
         };
 
@@ -250,7 +255,7 @@
 &trans  &trans  &trans  &trans  &trans    &trans             &trans            &trans             &trans            &trans
 &trans  &trans  &trans  &trans  &trans    &mmv MOVE_X(-300)  &mmv MOVE_Y(300)  &mmv MOVE_Y(-300)  &mmv MOVE_X(300)  &trans
 &trans  &trans  &trans  &trans  &trans    &trans             &mkp LCLK         &mkp RCLK          &trans            &trans
-                        &trans  &trans    &trans             &trans
+                        &trans  &trans    &to 0              &trans
             >;
         };
 
