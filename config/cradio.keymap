@@ -25,10 +25,12 @@
         hm: homerow_mods {
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
-            tapping-term-ms = <200>;
-            quick_tap_ms = <0>;
+            tapping-term-ms = <250>;
             flavor = "tap-preferred";
             bindings = <&kp>, <&kp>;
+
+            quick-tap-ms = <250>;
+            hold-trigger-on-release;
         };
 
         mm_left_inner: mm_left_inner {
@@ -112,18 +114,18 @@
             mods = <(MOD_LALT)>;
         };
 
-        mod_paren: mod_paren {
+        mod_parens: mod_parens {
             compatible = "zmk,behavior-mod-morph";
-            label = "MOD_PAREN";
+            label = "MOD_PARENS";
             bindings = <&kp LEFT_PARENTHESIS>, <&kp RIGHT_PARENTHESIS>;
 
             #binding-cells = <0>;
             mods = <(MOD_LSFT|MOD_RSFT)>;
         };
 
-        mod_brace: mod_brace {
+        mod_braces: mod_braces {
             compatible = "zmk,behavior-mod-morph";
-            label = "MOD_BRACE";
+            label = "MOD_BRACES";
             bindings = <&kp LEFT_BRACE>, <&kp RIGHT_BRACE>;
 
             #binding-cells = <0>;
@@ -203,12 +205,12 @@
         compatible = "zmk,combos";
 
         combo_parens {
-            bindings = <&mod_paren>;
+            bindings = <&mod_parens>;
             key-positions = <27 26>;
         };
 
         combo_braces {
-            bindings = <&mod_brace>;
+            bindings = <&mod_braces>;
             key-positions = <26 28>;
         };
 
@@ -226,7 +228,7 @@
 &kp Q               &kp W           &kp E        &kp R             &kp T            &kp Y         &kp U        &kp I        &kp O            &kp P
 &hm LEFT_COMMAND A  &hm LEFT_ALT S  &hm LCTRL D  &hm LEFT_SHIFT F  &kp G            &kp H         &hm RSHFT J  &hm LCTRL K  &hm RIGHT_ALT L  &mt RIGHT_COMMAND SEMICOLON
 &mt CAPS Z          &kp X           &kp C        &kp V             &kp B            &kp N         &kp M        &kp COMMA    &kp PERIOD       &kp SLASH
-                                                 &td_space_tab     &kp BACKSPACE    &lt 1 ESCAPE  &kp ENTER
+                                                 &kp SPACE         &kp BACKSPACE    &lt 1 ESCAPE  &kp ENTER
             >;
         };
 
@@ -235,7 +237,7 @@
 &kp F1                     &kp F2                 &kp F3                     &kp F4                   &kp F5       &td_f6_play_pause  &kp F7          &f8_vol_mute     &f9_vol_dn           &f10_vol_up
 &hm LEFT_COMMAND NUMBER_1  &hm LEFT_ALT NUMBER_2  &hm LEFT_CONTROL NUMBER_3  &hm LEFT_SHIFT NUMBER_4  &kp N5       &mm_left           &mm_down        &mm_up           &mm_right            &hm LEFT_COMMAND F11
 &kp N6                     &kp N7                 &kp N8                     &kp N9                   &kp N0       &kp LA(LEFT)       &mm_left_click  &mm_right_click  &kp RA(RIGHT_ARROW)  &kp F12
-                                                                             &kp MINUS                &kp EQUAL    &trans             &trans
+                                                                             &kp MINUS                &kp EQUAL    &trans             &kp TAB
             >;
         };
 
