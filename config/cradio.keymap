@@ -63,7 +63,7 @@
         mm_down_inner: mm_down_inner {
             compatible = "zmk,behavior-mod-morph";
             label = "MM_DOWN_INNER";
-            bindings = <&hm RIGHT_SHIFT DOWN_ARROW>, <&mmv MOVE_Y(300)>;
+            bindings = <&hm_shift RIGHT_SHIFT DOWN_ARROW>, <&mmv MOVE_Y(300)>;
 
             #binding-cells = <0>;
             mods = <(MOD_LGUI)>;
@@ -87,15 +87,6 @@
             mods = <(MOD_LALT)>;
         };
 
-        new_behavior: new_behavior {
-            compatible = "zmk,behavior-mod-morph";
-            label = "NEW_BEHAVIOR";
-            bindings = <&hm RCTRL UP_ARROW>, <&mm_up_inner>;
-
-            #binding-cells = <0>;
-            mods = <(MOD_LALT)>;
-        };
-
         mm_up: mm_up {
             compatible = "zmk,behavior-mod-morph";
             label = "MM_UP";
@@ -108,7 +99,7 @@
         mm_down: mm_down {
             compatible = "zmk,behavior-mod-morph";
             label = "MM_DOWN";
-            bindings = <&hm RIGHT_SHIFT DOWN_ARROW>, <&mm_down_inner>;
+            bindings = <&hm_shift RIGHT_SHIFT DOWN_ARROW>, <&mm_down_inner>;
 
             #binding-cells = <0>;
             mods = <(MOD_LALT)>;
@@ -193,11 +184,15 @@
             bindings = <&kp F6>, <&kp C_PP>;
         };
 
-        td_space_tab: td_space_tab {
-            compatible = "zmk,behavior-tap-dance";
-            label = "TD_SPACE_TAB";
-            #binding-cells = <0>;
-            bindings = <&kp SPACE>, <&kp TAB>;
+        hm_shift: hm_shift {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            tapping-term-ms = <150>;
+            flavor = "tap-preferred";
+            bindings = <&kp>, <&kp>;
+
+            quick-tap-ms = <150>;
+            label = "HM_SHIFT";
         };
     };
 
@@ -225,19 +220,19 @@
 
         default_layer {
             bindings = <
-&kp Q               &kp W           &kp E        &kp R             &kp T            &kp Y         &kp U        &kp I        &kp O            &kp P
-&hm LEFT_COMMAND A  &hm LEFT_ALT S  &hm LCTRL D  &hm LEFT_SHIFT F  &kp G            &kp H         &hm RSHFT J  &hm LCTRL K  &hm RIGHT_ALT L  &mt RIGHT_COMMAND SEMICOLON
-&mt CAPS Z          &kp X           &kp C        &kp V             &kp B            &kp N         &kp M        &kp COMMA    &kp PERIOD       &kp SLASH
-                                                 &kp SPACE         &kp BACKSPACE    &lt 1 ESCAPE  &kp ENTER
+&kp Q               &kp W           &kp E        &kp R                   &kp T            &kp Y         &kp U              &kp I        &kp O            &kp P
+&hm LEFT_COMMAND A  &hm LEFT_ALT S  &hm LCTRL D  &hm_shift LEFT_SHIFT F  &kp G            &kp H         &hm_shift RSHFT J  &hm RCTRL K  &hm RIGHT_ALT L  &mt RIGHT_COMMAND SEMICOLON
+&mt CAPS Z          &kp X           &kp C        &kp V                   &kp B            &kp N         &kp M              &kp COMMA    &kp PERIOD       &kp SLASH
+                                                 &kp SPACE               &kp BACKSPACE    &lt 1 ESCAPE  &kp ENTER
             >;
         };
 
         fn {
             bindings = <
-&kp F1                     &kp F2                 &kp F3                     &kp F4                   &kp F5       &td_f6_play_pause  &kp F7          &f8_vol_mute     &f9_vol_dn           &f10_vol_up
-&hm LEFT_COMMAND NUMBER_1  &hm LEFT_ALT NUMBER_2  &hm LEFT_CONTROL NUMBER_3  &hm LEFT_SHIFT NUMBER_4  &kp N5       &mm_left           &mm_down        &mm_up           &mm_right            &hm LEFT_COMMAND F11
-&kp N6                     &kp N7                 &kp N8                     &kp N9                   &kp N0       &kp LA(LEFT)       &mm_left_click  &mm_right_click  &kp RA(RIGHT_ARROW)  &kp F12
-                                                                             &kp MINUS                &kp EQUAL    &trans             &kp TAB
+&kp F1                     &kp F2                 &kp F3                     &kp F4                         &kp F5       &td_f6_play_pause  &kp F7          &f8_vol_mute     &f9_vol_dn           &f10_vol_up
+&hm LEFT_COMMAND NUMBER_1  &hm LEFT_ALT NUMBER_2  &hm LEFT_CONTROL NUMBER_3  &hm_shift LEFT_SHIFT NUMBER_4  &kp N5       &mm_left           &mm_down        &mm_up           &mm_right            &hm RCMD F11
+&kp N6                     &kp N7                 &kp N8                     &kp N9                         &kp N0       &kp LA(LEFT)       &mm_left_click  &mm_right_click  &kp RA(RIGHT_ARROW)  &kp F12
+                                                                             &kp MINUS                      &kp EQUAL    &trans             &kp TAB
             >;
         };
 
