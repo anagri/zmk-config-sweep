@@ -184,11 +184,18 @@
             mods = <(MOD_LSFT|MOD_RSFT)>;
         };
 
-        f6_td_play_pause: f6_td_play_pause {
+        td_f6_play_pause: td_f6_play_pause {
             compatible = "zmk,behavior-tap-dance";
-            label = "F6_TD_PLAY_PAUSE";
+            label = "TD_F6_PLAY_PAUSE";
             #binding-cells = <0>;
             bindings = <&kp F6>, <&kp C_PP>;
+        };
+
+        td_space_tab: td_space_tab {
+            compatible = "zmk,behavior-tap-dance";
+            label = "TD_SPACE_TAB";
+            #binding-cells = <0>;
+            bindings = <&kp SPACE>, <&kp TAB>;
         };
     };
 
@@ -219,13 +226,13 @@
 &kp Q               &kp W           &kp E        &kp R             &kp T            &kp Y         &kp U        &kp I        &kp O            &kp P
 &hm LEFT_COMMAND A  &hm LEFT_ALT S  &hm LCTRL D  &hm LEFT_SHIFT F  &kp G            &kp H         &hm RSHFT J  &hm LCTRL K  &hm RIGHT_ALT L  &mt RIGHT_COMMAND SEMICOLON
 &mt CAPS Z          &kp X           &kp C        &kp V             &kp B            &kp N         &kp M        &kp COMMA    &kp PERIOD       &kp SLASH
-                                                 &kp SPACE         &kp BACKSPACE    &lt 1 ESCAPE  &kp ENTER
+                                                 &td_space_tab     &kp BACKSPACE    &lt 1 ESCAPE  &kp ENTER
             >;
         };
 
         left_layer {
             bindings = <
-&kp F1                     &kp F2                 &kp F3                     &kp F4                   &kp F5    &f6_td_play_pause  &kp F7          &f8_vol_mute     &f9_vol_dn           &f10_vol_up
+&kp F1                     &kp F2                 &kp F3                     &kp F4                   &kp F5    &td_f6_play_pause  &kp F7          &f8_vol_mute     &f9_vol_dn           &f10_vol_up
 &hm LEFT_COMMAND NUMBER_1  &hm LEFT_ALT NUMBER_2  &hm LEFT_CONTROL NUMBER_3  &hm LEFT_SHIFT NUMBER_4  &kp N5    &mm_left           &mm_down        &mm_up           &mm_right            &hm LEFT_COMMAND F11
 &kp N6                     &kp N7                 &kp N8                     &kp N9                   &kp N0    &kp LA(LEFT)       &mm_left_click  &mm_right_click  &kp RA(RIGHT_ARROW)  &kp F12
                                                                              &trans                   &trans    &trans             &trans
