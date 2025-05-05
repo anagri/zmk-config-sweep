@@ -165,6 +165,24 @@
             #binding-cells = <0>;
             mods = <(MOD_LCTL|MOD_RCTL)>;
         };
+
+        mm_right_click: mm_right_click {
+            compatible = "zmk,behavior-mod-morph";
+            label = "MM_RIGHT_CLICK";
+            bindings = <&mkp RCLK>, <&kp PAGE_UP>;
+
+            #binding-cells = <0>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
+
+        mm_left_click: mm_left_click {
+            compatible = "zmk,behavior-mod-morph";
+            label = "MM_LEFT_CLICK";
+            bindings = <&mkp LCLK>, <&kp PAGE_DOWN>;
+
+            #binding-cells = <0>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
     };
 
     combos {
@@ -200,9 +218,9 @@
 
         left_layer {
             bindings = <
-&kp F1                     &kp F2                 &kp F3                     &kp F4                   &kp F5    &kp F6        &kp F7        &f8_vol_mute  &f9_vol_dn  &f10_vol_up
-&hm LEFT_COMMAND NUMBER_1  &hm LEFT_ALT NUMBER_2  &hm LEFT_CONTROL NUMBER_3  &hm LEFT_SHIFT NUMBER_4  &kp N5    &mm_left      &mm_down      &mm_up        &mm_right   &hm LEFT_COMMAND F11
-&kp N6                     &kp N7                 &kp N8                     &kp N9                   &kp N0    &kp LA(LEFT)  &kp LA(LEFT)  &kp COMMA     &kp DOT     &kp F12
+&kp F1                     &kp F2                 &kp F3                     &kp F4                   &kp F5    &kp F6        &kp F7          &f8_vol_mute     &f9_vol_dn           &f10_vol_up
+&hm LEFT_COMMAND NUMBER_1  &hm LEFT_ALT NUMBER_2  &hm LEFT_CONTROL NUMBER_3  &hm LEFT_SHIFT NUMBER_4  &kp N5    &mm_left      &mm_down        &mm_up           &mm_right            &hm LEFT_COMMAND F11
+&kp N6                     &kp N7                 &kp N8                     &kp N9                   &kp N0    &kp LA(LEFT)  &mm_left_click  &mm_right_click  &kp RA(RIGHT_ARROW)  &kp F12
                                                                              &trans                   &trans    &to 0         &to 2
             >;
         };
