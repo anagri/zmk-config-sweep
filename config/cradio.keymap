@@ -232,7 +232,7 @@
             >;
         };
 
-        left_layer {
+        fn {
             bindings = <
 &kp F1                     &kp F2                 &kp F3                     &kp F4                   &kp F5       &td_f6_play_pause  &kp F7          &f8_vol_mute     &f9_vol_dn           &f10_vol_up
 &hm LEFT_COMMAND NUMBER_1  &hm LEFT_ALT NUMBER_2  &hm LEFT_CONTROL NUMBER_3  &hm LEFT_SHIFT NUMBER_4  &kp N5       &mm_left           &mm_down        &mm_up           &mm_right            &hm LEFT_COMMAND F11
