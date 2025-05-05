@@ -158,19 +158,51 @@
             #binding-cells = <0>;
             mods = <(MOD_LALT)>;
         };
+
+        mod_paren: mod_paren {
+            compatible = "zmk,behavior-mod-morph";
+            label = "MOD_PAREN";
+            bindings = <&kp LEFT_PARENTHESIS>, <&kp RIGHT_PARENTHESIS>;
+
+            #binding-cells = <0>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
+
+        mod_brace: mod_brace {
+            compatible = "zmk,behavior-mod-morph";
+            label = "MOD_BRACE";
+            bindings = <&kp LEFT_BRACE>, <&kp RIGHT_BRACE>;
+
+            #binding-cells = <0>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
+
+        mod_brackets: mod_brackets {
+            compatible = "zmk,behavior-mod-morph";
+            label = "MOD_BRACKETS";
+            bindings = <&kp LEFT_BRACKET>, <&kp RIGHT_BRACKET>;
+
+            #binding-cells = <0>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
     };
 
     combos {
         compatible = "zmk,combos";
 
-        layer1 {
-            bindings = <&to 0>;
-            key-positions = <32 31>;
+        combo_parens {
+            bindings = <&mod_paren>;
+            key-positions = <27 26>;
         };
 
-        layer-1 {
-            bindings = <&to 1>;
-            key-positions = <31 33>;
+        combo_braces {
+            bindings = <&mod_brace>;
+            key-positions = <26 28>;
+        };
+
+        combo_brackets {
+            bindings = <&mod_brackets>;
+            key-positions = <26 29>;
         };
     };
 
@@ -179,9 +211,9 @@
 
         default_layer {
             bindings = <
-&kp Q               &kp W           &kp E        &kp R             &kp T            &kp Y         &kp U        &kp I          &kp O            &kp P
-&hm LEFT_COMMAND A  &hm LEFT_ALT S  &hm LCTRL D  &hm LEFT_SHIFT F  &kp G            &kp H         &hm RSHFT J  &hm LCTRL K    &hm RIGHT_ALT L  &mt RIGHT_COMMAND SEMICOLON
-&mt CAPS Z          &kp X           &kp C        &kp V             &kp B            &kp N         &kp M        &td SQT COMMA  &td EXCL DOT     &td BSLH FSLH
+&kp Q               &kp W           &kp E        &kp R             &kp T            &kp Y         &kp U        &kp I        &kp O            &kp P
+&hm LEFT_COMMAND A  &hm LEFT_ALT S  &hm LCTRL D  &hm LEFT_SHIFT F  &kp G            &kp H         &hm RSHFT J  &hm LCTRL K  &hm RIGHT_ALT L  &mt RIGHT_COMMAND SEMICOLON
+&mt CAPS Z          &kp X           &kp C        &kp V             &kp B            &kp N         &kp M        &kp COMMA    &kp PERIOD       &kp SLASH
                                                  &kp SPACE         &kp BACKSPACE    &lt 1 ESCAPE  &kp RET
             >;
         };
