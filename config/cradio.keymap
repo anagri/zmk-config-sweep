@@ -31,53 +31,6 @@
             bindings = <&kp>, <&kp>;
         };
 
-        td: tapdance {
-            compatible = "zmk,behavior-hold-tap";
-            #binding-cells = <2>;
-            tapping-term-ms = <150>;
-            quick_tap_ms = <0>;
-            flavor = "tap-preferred";
-            bindings = <&kp>, <&kp>;
-        };
-
-        F9_voldn: F9_voldn {
-            compatible = "zmk,behavior-mod-morph";
-            label = "F9_VOLDN";
-            bindings = <&kp F9>, <&kp C_VOL_DN>;
-
-            #binding-cells = <0>;
-            mods = <(MOD_LCTL|MOD_RCTL)>;
-        };
-
-        f10_volup: f10_volup {
-            compatible = "zmk,behavior-mod-morph";
-            label = "F10_VOLUP";
-            bindings = <&kp F10>, <&kp C_VOLUME_UP>;
-
-            #binding-cells = <0>;
-            mods = <(MOD_LCTL|MOD_RCTL)>;
-        };
-
-        f8_volmt: f8_volmt {
-            compatible = "zmk,behavior-mod-morph";
-            label = "F8_VOLMT";
-            bindings = <&kp F8>, <&kp C_MUTE>;
-
-            #binding-cells = <0>;
-            mods = <(MOD_LCTL|MOD_RCTL)>;
-        };
-
-        mute_vol_dn: mute_vol_dn {
-            compatible = "zmk,behavior-hold-tap";
-            label = "MUTE_VOL_DN";
-            bindings = <&f8_volmt>, <&F9_voldn>;
-
-            #binding-cells = <2>;
-            tapping-term-ms = <250>;
-            quick-tap-ms = <250>;
-            flavor = "tap-preferred";
-        };
-
         mm_left_inner: mm_left_inner {
             compatible = "zmk,behavior-mod-morph";
             label = "MM_LEFT_INNER";
@@ -185,6 +138,33 @@
             #binding-cells = <0>;
             mods = <(MOD_LSFT|MOD_RSFT)>;
         };
+
+        f8_vol_mute: f8_vol_mute {
+            compatible = "zmk,behavior-mod-morph";
+            label = "F8_VOL_MUTE";
+            bindings = <&kp F8>, <&kp C_MUTE>;
+
+            #binding-cells = <0>;
+            mods = <(MOD_LCTL|MOD_RCTL)>;
+        };
+
+        f9_vol_dn: f9_vol_dn {
+            compatible = "zmk,behavior-mod-morph";
+            label = "F9_VOL_DN";
+            bindings = <&kp F9>, <&kp C_VOLUME_DOWN>;
+
+            #binding-cells = <0>;
+            mods = <(MOD_LCTL|MOD_RCTL)>;
+        };
+
+        f10_vol_up: f10_vol_up {
+            compatible = "zmk,behavior-mod-morph";
+            label = "F10_VOL_UP";
+            bindings = <&kp F10>, <&kp C_VOLUME_UP>;
+
+            #binding-cells = <0>;
+            mods = <(MOD_LCTL|MOD_RCTL)>;
+        };
     };
 
     combos {
@@ -220,9 +200,9 @@
 
         left_layer {
             bindings = <
-&kp F1                     &kp F2                 &kp F3                     &kp F4                   &kp F5    &kp F6        &kp F7        &kp F8     &kp F9     &kp F10
-&hm LEFT_COMMAND NUMBER_1  &hm LEFT_ALT NUMBER_2  &hm LEFT_CONTROL NUMBER_3  &hm LEFT_SHIFT NUMBER_4  &kp N5    &mm_left      &mm_down      &mm_up     &mm_right  &hm LEFT_COMMAND F11
-&kp N6                     &kp N7                 &kp N8                     &kp N9                   &kp N0    &kp LA(LEFT)  &kp LA(LEFT)  &kp COMMA  &kp DOT    &kp F12
+&kp F1                     &kp F2                 &kp F3                     &kp F4                   &kp F5    &kp F6        &kp F7        &f8_vol_mute  &f9_vol_dn  &f10_vol_up
+&hm LEFT_COMMAND NUMBER_1  &hm LEFT_ALT NUMBER_2  &hm LEFT_CONTROL NUMBER_3  &hm LEFT_SHIFT NUMBER_4  &kp N5    &mm_left      &mm_down      &mm_up        &mm_right   &hm LEFT_COMMAND F11
+&kp N6                     &kp N7                 &kp N8                     &kp N9                   &kp N0    &kp LA(LEFT)  &kp LA(LEFT)  &kp COMMA     &kp DOT     &kp F12
                                                                              &trans                   &trans    &to 0         &to 2
             >;
         };
