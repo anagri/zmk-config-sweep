@@ -77,6 +77,87 @@
             quick-tap-ms = <250>;
             flavor = "tap-preferred";
         };
+
+        mm_left_inner: mm_left_inner {
+            compatible = "zmk,behavior-mod-morph";
+            label = "MM_LEFT_INNER";
+            bindings = <&kp LEFT>, <&mmv MOVE_X(-300)>;
+
+            #binding-cells = <0>;
+            mods = <(MOD_LGUI)>;
+        };
+
+        mm_right_inner: mm_right_inner {
+            compatible = "zmk,behavior-mod-morph";
+            label = "MM_RIGHT_INNER";
+            bindings = <&hm RALT RIGHT>, <&mmv MOVE_X(300)>;
+
+            #binding-cells = <0>;
+            mods = <(MOD_LGUI)>;
+        };
+
+        mm_up_inner: mm_up_inner {
+            compatible = "zmk,behavior-mod-morph";
+            label = "MM_UP_INNER";
+            bindings = <&hm RCTRL UP_ARROW>, <&mmv MOVE_Y(-300)>;
+
+            #binding-cells = <0>;
+            mods = <(MOD_LGUI)>;
+        };
+
+        mm_down_inner: mm_down_inner {
+            compatible = "zmk,behavior-mod-morph";
+            label = "MM_DOWN_INNER";
+            bindings = <&hm RIGHT_SHIFT DOWN_ARROW>, <&mmv MOVE_Y(300)>;
+
+            #binding-cells = <0>;
+            mods = <(MOD_LGUI)>;
+        };
+
+        mm_left: mm_left {
+            compatible = "zmk,behavior-mod-morph";
+            label = "MM_LEFT";
+            bindings = <&kp LEFT_ARROW>, <&mm_left_inner>;
+
+            #binding-cells = <0>;
+            mods = <(MOD_LALT)>;
+        };
+
+        mm_right: mm_right {
+            compatible = "zmk,behavior-mod-morph";
+            label = "MM_RIGHT";
+            bindings = <&hm RALT RIGHT>, <&mm_right_inner>;
+
+            #binding-cells = <0>;
+            mods = <(MOD_LALT)>;
+        };
+
+        new_behavior: new_behavior {
+            compatible = "zmk,behavior-mod-morph";
+            label = "NEW_BEHAVIOR";
+            bindings = <&hm RCTRL UP_ARROW>, <&mm_up_inner>;
+
+            #binding-cells = <0>;
+            mods = <(MOD_LALT)>;
+        };
+
+        mm_up: mm_up {
+            compatible = "zmk,behavior-mod-morph";
+            label = "MM_UP";
+            bindings = <&hm RCTRL UP_ARROW>, <&mm_up_inner>;
+
+            #binding-cells = <0>;
+            mods = <(MOD_LALT)>;
+        };
+
+        mm_down: mm_down {
+            compatible = "zmk,behavior-mod-morph";
+            label = "MM_DOWN";
+            bindings = <&hm RIGHT_SHIFT DOWN_ARROW>, <&mm_down_inner>;
+
+            #binding-cells = <0>;
+            mods = <(MOD_LALT)>;
+        };
     };
 
     combos {
@@ -107,9 +188,9 @@
 
         left_layer {
             bindings = <
-&kp F1                     &kp F2                 &kp F3                     &kp F4                   &kp F5    &kp F6        &kp F7        &kp F8       &kp F9      &kp F10
-&hm LEFT_COMMAND NUMBER_1  &hm LEFT_ALT NUMBER_2  &hm LEFT_CONTROL NUMBER_3  &hm LEFT_SHIFT NUMBER_4  &kp N5    &kp HOME      &hm RSHFT C   &hm RCTRL B  &hm RALT A  &hm LEFT_COMMAND F11
-&kp N6                     &kp N7                 &kp N8                     &kp N9                   &kp N0    &kp LA(LEFT)  &kp LA(LEFT)  &kp COMMA    &kp DOT     &kp F12
+&kp F1                     &kp F2                 &kp F3                     &kp F4                   &kp F5    &kp F6        &kp F7        &kp F8     &kp F9     &kp F10
+&hm LEFT_COMMAND NUMBER_1  &hm LEFT_ALT NUMBER_2  &hm LEFT_CONTROL NUMBER_3  &hm LEFT_SHIFT NUMBER_4  &kp N5    &mm_left      &mm_down      &mm_up     &mm_right  &hm LEFT_COMMAND F11
+&kp N6                     &kp N7                 &kp N8                     &kp N9                   &kp N0    &kp LA(LEFT)  &kp LA(LEFT)  &kp COMMA  &kp DOT    &kp F12
                                                                              &trans                   &to 0     &to 0         &to 2
             >;
         };
