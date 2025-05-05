@@ -255,7 +255,7 @@
 &kp ESC  &kp C_PP  &kp C_PREV    &kp C_NEXT    &kp LS(MINUS)    &kp MINUS  &kp N7  &kp N8  &kp N9  &trans
 &kp TAB  &gresc    &kp C_VOL_DN  &kp C_VOL_UP  &kp LS(EQUAL)    &kp EQUAL  &kp N4  &kp N5  &kp N6  &kp ENTER
 &to 3    &kp AMPS  &kp SLASH     &kp STAR      &kp DOT          &kp N0     &kp N1  &kp N2  &kp N3  &trans
-                                 &trans        &to 0            &to 2      &to 3
+                                 &trans        &trans           &to 0      &trans
             >;
         };
 
