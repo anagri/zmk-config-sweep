@@ -184,6 +184,13 @@
             quick-tap-ms = <150>;
             label = "HM_SHIFT";
         };
+
+        layer2: layer2 {
+            compatible = "zmk,behavior-tap-dance";
+            label = "LAYER2";
+            #binding-cells = <0>;
+            bindings = <&kp X>, <&to 2>;
+        };
     };
 
     combos {
@@ -212,8 +219,8 @@
             bindings = <
 &kp Q       &kp W       &kp E        &kp R              &kp T            &kp Y         &kp U              &kp I        &kp O       &kp P
 &hm LGUI A  &hm LALT S  &hm LCTRL D  &hm_shift LSHFT F  &kp G            &kp H         &hm_shift RSHFT J  &hm RCTRL K  &hm RALT L  &mt RGUI SEMICOLON
-&mt CAPS Z  &kp X       &kp C        &kp V              &kp B            &kp N         &kp M              &kp COMMA    &kp PERIOD  &kp SLASH
-                                     &kp SPACE          &kp BACKSPACE    &lt 1 ESCAPE  &lt 2 ENTER
+&mt CAPS Z  &layer2     &kp C        &kp V              &kp B            &kp N         &kp M              &kp COMMA    &kp PERIOD  &kp SLASH
+                                     &kp SPACE          &kp BACKSPACE    &lt 1 ESCAPE  &kp ENTER
             >;
         };
 
@@ -250,24 +257,6 @@
 &kp TAB  &gresc    &kp C_VOL_DN  &kp C_VOL_UP  &kp LS(EQUAL)    &kp EQUAL  &kp N4  &kp N5  &kp N6  &kp ENTER
 &to 3    &kp AMPS  &kp SLASH     &kp STAR      &kp DOT          &kp N0     &kp N1  &kp N2  &kp N3  &trans
                                  &trans        &trans           &to 0      &trans
-            >;
-        };
-
-        extra_layer {
-            bindings = <
-&trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans
-                        &trans  &trans    &trans  &trans
-            >;
-        };
-
-        layer_6 {
-            bindings = <
-&trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans
-                        &trans  &trans    &trans  &trans
             >;
         };
     };
