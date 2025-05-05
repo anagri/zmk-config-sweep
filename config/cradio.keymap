@@ -203,12 +203,6 @@
             bindings = <&mod_brackets>;
             key-positions = <26 29>;
         };
-
-        mouse_layer {
-            bindings = <&tog 2>;
-            key-positions = <31 32>;
-            layers = <0>;
-        };
     };
 
     keymap {
@@ -218,8 +212,8 @@
             bindings = <
 &kp Q       &kp W       &kp E        &kp R              &kp T            &kp Y         &kp U              &kp I        &kp O       &kp P
 &hm LGUI A  &hm LALT S  &hm LCTRL D  &hm_shift LSHFT F  &kp G            &kp H         &hm_shift RSHFT J  &hm RCTRL K  &hm RALT L  &mt RGUI SEMICOLON
-&mt CAPS Z  &lt 2 X     &kp C        &kp V              &kp B            &kp N         &kp M              &kp COMMA    &kp PERIOD  &kp SLASH
-                                     &kp SPACE          &kp BACKSPACE    &lt 1 ESCAPE  &kp ENTER
+&mt CAPS Z  &kp X       &kp C        &kp V              &kp B            &kp N         &kp M              &kp COMMA    &kp PERIOD  &kp SLASH
+                                     &kp SPACE          &kp BACKSPACE    &lt 1 ESCAPE  &lt 2 ENTER
             >;
         };
 
