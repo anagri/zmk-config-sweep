@@ -214,6 +214,7 @@
         mouse_layer {
             bindings = <&tog 2>;
             key-positions = <22 23>;
+            layers = <1>;
         };
     };
 
