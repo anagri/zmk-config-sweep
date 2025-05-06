@@ -23,105 +23,6 @@
             hold-trigger-on-release;
         };
 
-        mm_left_inner: mm_left_inner {
-            compatible = "zmk,behavior-mod-morph";
-            label = "MM_LEFT_INNER";
-            bindings = <&kp LEFT>, <&mmv MOVE_X(-300)>;
-
-            #binding-cells = <0>;
-            mods = <(MOD_LGUI)>;
-        };
-
-        mm_right_inner: mm_right_inner {
-            compatible = "zmk,behavior-mod-morph";
-            label = "MM_RIGHT_INNER";
-            bindings = <&hm RALT RIGHT>, <&mmv MOVE_X(300)>;
-
-            #binding-cells = <0>;
-            mods = <(MOD_LGUI)>;
-        };
-
-        mm_up_inner: mm_up_inner {
-            compatible = "zmk,behavior-mod-morph";
-            label = "MM_UP_INNER";
-            bindings = <&hm RCTRL UP_ARROW>, <&mmv MOVE_Y(-300)>;
-
-            #binding-cells = <0>;
-            mods = <(MOD_LGUI)>;
-        };
-
-        mm_down_inner: mm_down_inner {
-            compatible = "zmk,behavior-mod-morph";
-            label = "MM_DOWN_INNER";
-            bindings = <&hm_shift RIGHT_SHIFT DOWN_ARROW>, <&mmv MOVE_Y(300)>;
-
-            #binding-cells = <0>;
-            mods = <(MOD_LGUI)>;
-        };
-
-        mm_left: mm_left {
-            compatible = "zmk,behavior-mod-morph";
-            label = "MM_LEFT";
-            bindings = <&kp LEFT_ARROW>, <&mm_left_inner>;
-
-            #binding-cells = <0>;
-            mods = <(MOD_LALT)>;
-        };
-
-        mm_right: mm_right {
-            compatible = "zmk,behavior-mod-morph";
-            label = "MM_RIGHT";
-            bindings = <&hm RALT RIGHT>, <&mm_right_inner>;
-
-            #binding-cells = <0>;
-            mods = <(MOD_LALT)>;
-        };
-
-        mm_up: mm_up {
-            compatible = "zmk,behavior-mod-morph";
-            label = "MM_UP";
-            bindings = <&hm RCTRL UP_ARROW>, <&mm_up_inner>;
-
-            #binding-cells = <0>;
-            mods = <(MOD_LALT)>;
-        };
-
-        mm_down: mm_down {
-            compatible = "zmk,behavior-mod-morph";
-            label = "MM_DOWN";
-            bindings = <&hm_shift RIGHT_SHIFT DOWN_ARROW>, <&mm_down_inner>;
-
-            #binding-cells = <0>;
-            mods = <(MOD_LALT)>;
-        };
-
-        mod_parens: mod_parens {
-            compatible = "zmk,behavior-mod-morph";
-            label = "MOD_PARENS";
-            bindings = <&kp LEFT_PARENTHESIS>, <&kp RIGHT_PARENTHESIS>;
-
-            #binding-cells = <0>;
-            mods = <(MOD_LSFT|MOD_RSFT)>;
-        };
-
-        mod_braces: mod_braces {
-            compatible = "zmk,behavior-mod-morph";
-            label = "MOD_BRACES";
-            bindings = <&kp LEFT_BRACE>, <&kp RIGHT_BRACE>;
-
-            #binding-cells = <0>;
-            mods = <(MOD_LSFT|MOD_RSFT)>;
-        };
-
-        mod_brackets: mod_brackets {
-            compatible = "zmk,behavior-mod-morph";
-            label = "MOD_BRACKETS";
-            bindings = <&kp LEFT_BRACKET>, <&kp RIGHT_BRACKET>;
-
-            #binding-cells = <0>;
-            mods = <(MOD_LSFT|MOD_RSFT)>;
-        };
-
         f8_vol_mute: f8_vol_mute {
             compatible = "zmk,behavior-mod-morph";
             label = "F8_VOL_MUTE";
@@ -149,24 +50,6 @@
             mods = <(MOD_LCTL|MOD_RCTL)>;
         };
 
-        mm_right_click: mm_right_click {
-            compatible = "zmk,behavior-mod-morph";
-            label = "MM_RIGHT_CLICK";
-            bindings = <&mkp RCLK>, <&kp PAGE_UP>;
-
-            #binding-cells = <0>;
-            mods = <(MOD_LSFT|MOD_RSFT)>;
-        };
-
-        mm_left_click: mm_left_click {
-            compatible = "zmk,behavior-mod-morph";
-            label = "MM_LEFT_CLICK";
-            bindings = <&mkp LCLK>, <&kp PAGE_DOWN>;
-
-            #binding-cells = <0>;
-            mods = <(MOD_LSFT|MOD_RSFT)>;
-        };
-
         td_f6_play_pause: td_f6_play_pause {
             compatible = "zmk,behavior-tap-dance";
             label = "TD_F6_PLAY_PAUSE";
@@ -192,13 +75,11 @@
             bindings = <&kp ESCAPE>, <&tog 2>;
         };
 
-        mod_tilde_pipe: mod_tilde_pipe {
-            compatible = "zmk,behavior-mod-morph";
-            label = "MOD_TILDE_PIPE";
-            bindings = <&kp TILDE>, <&kp PIPE>;
-
+        td_fn_esc: td_fn_esc {
+            compatible = "zmk,behavior-tap-dance";
+            label = "TD_FN_ESC";
             #binding-cells = <0>;
-            mods = <(MOD_LSFT|MOD_RSFT)>;
+            bindings = <&kp ESCAPE>, <&tog 1>;
         };
     };
 
@@ -207,24 +88,24 @@
 
         combo_braces {
             bindings = <&kp LEFT_BRACKET>;
-            key-positions = <26 28>;
+            key-positions = <26 27>;
             layers = <0>;
         };
 
         combo_brackets {
             bindings = <&kp RIGHT_BRACKET>;
-            key-positions = <26 29>;
+            key-positions = <26 28>;
             layers = <0>;
         };
 
         mouse_layer {
-            bindings = <&to 2>;
+            bindings = <&to 1>;
             key-positions = <22 23>;
             layers = <0>;
         };
 
         toggle_layer_fn {
-            bindings = <&to 1>;
+            bindings = <&to 2>;
             key-positions = <23 21>;
             layers = <0>;
         };
@@ -246,8 +127,8 @@
             bindings = <
 &kp F1             &kp F2             &kp F3              &kp F4                    &kp F5    &td_f6_play_pause  &kp F7                &f8_vol_mute        &f9_vol_dn            &f10_vol_up
 &hm LGUI NUMBER_1  &hm LALT NUMBER_2  &hm LCTRL NUMBER_3  &hm_shift LSHFT NUMBER_4  &kp N5    &kp LEFT_ARROW     &hm RSHFT DOWN_ARROW  &hm RCTRL UP_ARROW  &hm RALT RIGHT_ARROW  &hm RCMD F11
-&kp N6             &kp N7             &kp N8              &kp N9                    &kp N0    &kp MINUS          &kp EQUAL             &kp SINGLE_QUOTE    &kp BACKSLASH         &mod_tilde_pipe
-                                                          &kp TAB                   &trans    &tog 1             &kp F12
+&kp N6             &kp N7             &kp N8              &kp N9                    &kp N0    &kp MINUS          &kp EQUAL             &kp SINGLE_QUOTE    &kp BACKSLASH         &kp GRAVE
+                                                          &kp TAB                   &trans    &td_fn_esc         &kp F12
             >;
         };
 
