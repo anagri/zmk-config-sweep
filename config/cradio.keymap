@@ -135,8 +135,8 @@
         mouse {
             bindings = <
 &kp NUMBER_2   &bootloader    &trans         &trans             &trans    &trans             &trans            &trans             &bootloader       &trans
-&kp LG(SPACE)  &kp LA(SPACE)  &kp LA(LG(J))  &kp LS(LG(SPACE))  &trans    &mmv MOVE_X(-300)  &mmv MOVE_Y(300)  &mmv MOVE_Y(-300)  &mmv MOVE_X(300)  &trans
-&trans         &trans         &trans         &trans             &trans    &msc SCRL_DOWN     &mkp LCLK         &mkp RCLK          &msc SCRL_UP      &trans
+&kp LG(SPACE)  &kp LA(SPACE)  &kp LA(LG(J))  &kp LS(LG(SPACE))  &trans    &mmv MOVE_X(-300)  &mmv MOVE_Y(300)  &mmv MOVE_Y(-300)  &mmv MOVE_X(300)  &msc SCRL_LEFT
+&trans         &trans         &trans         &trans             &trans    &msc SCRL_UP       &mkp LCLK         &mkp RCLK          &msc SCRL_DOWN    &msc SCRL_RIGHT
                                              &trans             &trans    &td_mouse_esc      &trans
             >;
         };
