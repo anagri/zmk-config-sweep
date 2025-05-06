@@ -191,25 +191,28 @@
             #binding-cells = <0>;
             bindings = <&kp ESCAPE>, <&tog 2>;
         };
+
+        mod_tilde_pipe: mod_tilde_pipe {
+            compatible = "zmk,behavior-mod-morph";
+            label = "MOD_TILDE_PIPE";
+            bindings = <&kp TILDE>, <&kp PIPE>;
+
+            #binding-cells = <0>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
     };
 
     combos {
         compatible = "zmk,combos";
 
-        combo_parens {
-            bindings = <&mod_parens>;
-            key-positions = <27 26>;
-            layers = <0>;
-        };
-
         combo_braces {
-            bindings = <&mod_braces>;
+            bindings = <&kp LEFT_BRACKET>;
             key-positions = <26 28>;
             layers = <0>;
         };
 
         combo_brackets {
-            bindings = <&mod_brackets>;
+            bindings = <&kp RIGHT_BRACKET>;
             key-positions = <26 29>;
             layers = <0>;
         };
@@ -217,6 +220,12 @@
         mouse_layer {
             bindings = <&to 2>;
             key-positions = <22 23>;
+            layers = <0>;
+        };
+
+        toggle_layer_fn {
+            bindings = <&to 1>;
+            key-positions = <23 21>;
             layers = <0>;
         };
     };
@@ -235,19 +244,19 @@
 
         fn {
             bindings = <
-&kp F1             &kp F2             &kp F3              &kp F4                    &kp F5       &td_f6_play_pause  &kp F7                &f8_vol_mute        &f9_vol_dn            &f10_vol_up
-&hm LGUI NUMBER_1  &hm LALT NUMBER_2  &hm LCTRL NUMBER_3  &hm_shift LSHFT NUMBER_4  &kp N5       &kp LEFT_ARROW     &hm RSHFT DOWN_ARROW  &hm RCTRL UP_ARROW  &hm RALT RIGHT_ARROW  &hm RCMD F11
-&kp N6             &kp N7             &kp N8              &kp N9                    &kp N0       &kp LA(LEFT)       &kp PAGE_DOWN         &kp PAGE_UP         &kp RA(RIGHT_ARROW)   &kp F12
-                                                          &kp LG(TAB)               &kp MINUS    &none              &kp EQUAL
+&kp F1             &kp F2             &kp F3              &kp F4                    &kp F5    &td_f6_play_pause  &kp F7                &f8_vol_mute        &f9_vol_dn            &f10_vol_up
+&hm LGUI NUMBER_1  &hm LALT NUMBER_2  &hm LCTRL NUMBER_3  &hm_shift LSHFT NUMBER_4  &kp N5    &kp LEFT_ARROW     &hm RSHFT DOWN_ARROW  &hm RCTRL UP_ARROW  &hm RALT RIGHT_ARROW  &hm RCMD F11
+&kp N6             &kp N7             &kp N8              &kp N9                    &kp N0    &kp MINUS          &kp EQUAL             &kp SINGLE_QUOTE    &kp BACKSLASH         &mod_tilde_pipe
+                                                          &kp TAB                   &trans    &tog 1             &kp F12
             >;
         };
 
         mouse {
             bindings = <
-&trans        &trans          &trans          &trans          &trans             &trans             &trans            &trans             &trans            &trans
-&kp NUMBER_2  &mmv MOVE_LEFT  &mmv MOVE_UP    &mmv MOVE_DOWN  &mmv MOVE_RIGHT    &mmv MOVE_X(-300)  &mmv MOVE_Y(300)  &mmv MOVE_Y(-300)  &mmv MOVE_X(300)  &trans
-&trans        &msc SCRL_LEFT  &msc SCRL_DOWN  &msc SCRL_UP    &msc SCRL_RIGHT    &kp PAGE_DOWN      &mkp LCLK         &mkp RCLK          &kp PAGE_UP       &trans
-                                              &trans          &trans             &td_mouse_esc      &trans
+&trans         &trans         &trans         &trans             &trans    &trans             &trans            &trans             &trans            &trans
+&kp LG(SPACE)  &kp LA(SPACE)  &kp LA(LG(J))  &kp LS(LG(SPACE))  &trans    &mmv MOVE_X(-300)  &mmv MOVE_Y(300)  &mmv MOVE_Y(-300)  &mmv MOVE_X(300)  &trans
+&trans         &trans         &trans         &trans             &trans    &msc SCRL_DOWN     &mkp LCLK         &mkp RCLK          &msc SCRL_UP      &trans
+                                             &trans             &trans    &td_mouse_esc      &trans
             >;
         };
 
