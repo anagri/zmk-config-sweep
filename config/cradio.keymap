@@ -210,6 +210,11 @@
             bindings = <&mod_brackets>;
             key-positions = <26 29>;
         };
+
+        mouse_layer {
+            bindings = <&tog 2>;
+            key-positions = <22 23>;
+        };
     };
 
     keymap {
@@ -219,7 +224,7 @@
             bindings = <
 &kp Q       &kp W       &kp E        &kp R              &kp T            &kp Y         &kp U              &kp I        &kp O       &kp P
 &hm LGUI A  &hm LALT S  &hm LCTRL D  &hm_shift LSHFT F  &kp G            &kp H         &hm_shift RSHFT J  &hm RCTRL K  &hm RALT L  &mt RGUI SEMICOLON
-&mt CAPS Z  &layer2     &kp C        &kp V              &kp B            &kp N         &kp M              &kp COMMA    &kp PERIOD  &kp SLASH
+&mt CAPS Z  &kp X       &kp C        &kp V              &kp B            &kp N         &kp M              &kp COMMA    &kp PERIOD  &kp SLASH
                                      &kp SPACE          &kp BACKSPACE    &lt 1 ESCAPE  &kp ENTER
             >;
         };
@@ -238,7 +243,7 @@
 &trans  &trans  &trans  &trans  &trans    &trans             &trans            &trans             &trans            &trans
 &trans  &trans  &trans  &trans  &trans    &mmv MOVE_X(-300)  &mmv MOVE_Y(300)  &mmv MOVE_Y(-300)  &mmv MOVE_X(300)  &trans
 &trans  &trans  &trans  &trans  &trans    &trans             &mkp LCLK         &mkp RCLK          &trans            &trans
-                        &trans  &trans    &to 0              &trans
+                        &trans  &trans    &tog 2             &trans
             >;
         };
 
