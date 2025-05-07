@@ -81,6 +81,17 @@
             #binding-cells = <0>;
             bindings = <&kp ESCAPE>, <&tog 1>;
         };
+
+        mt_tap: mt_tap {
+            compatible = "zmk,behavior-hold-tap";
+            label = "MT_TAP";
+            bindings = <&kp>, <&kp>;
+
+            #binding-cells = <2>;
+            tapping-term-ms = <150>;
+            quick-tap-ms = <150>;
+            flavor = "tap-preferred";
+        };
     };
 
     combos {
@@ -116,10 +127,10 @@
 
         default_layer {
             bindings = <
-&kp Q       &kp W       &kp E        &kp R              &kp T            &kp Y         &kp U              &kp I        &kp O       &kp P
-&hm LGUI A  &hm LALT S  &hm LCTRL D  &hm_shift LSHFT F  &lt 1 G          &mt CAPS H    &hm_shift RSHFT J  &hm RCTRL K  &hm RALT L  &mt RGUI SEMICOLON
-&kp Z       &kp X       &kp C        &kp V              &lt 2 B          &kp N         &kp M              &kp COMMA    &kp PERIOD  &kp SLASH
-                                     &kp SPACE          &kp BACKSPACE    &lt 1 ESCAPE  &kp ENTER
+&kp Q       &kp W       &kp E        &kp R              &kp T            &kp Y           &kp U              &kp I        &kp O       &kp P
+&hm LGUI A  &hm LALT S  &hm LCTRL D  &hm_shift LSHFT F  &lt 1 G          &mt_tap CAPS H  &hm_shift RSHFT J  &hm RCTRL K  &hm RALT L  &mt RGUI SEMICOLON
+&kp Z       &kp X       &kp C        &kp V              &lt 2 B          &kp N           &kp M              &kp COMMA    &kp PERIOD  &kp SLASH
+                                     &kp SPACE          &kp BACKSPACE    &lt 1 ESCAPE    &kp ENTER
             >;
         };
 
