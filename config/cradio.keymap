@@ -93,6 +93,13 @@
             flavor = "tap-preferred";
             retro-tap;
         };
+
+        td_f1_caps: td_f1_caps {
+            compatible = "zmk,behavior-tap-dance";
+            label = "TD_F1_CAPS";
+            #binding-cells = <0>;
+            bindings = <&kp F1>, <&kp CAPSLOCK>;
+        };
     };
 
     combos {
@@ -128,16 +135,16 @@
 
         default_layer {
             bindings = <
-&kp Q       &kp W       &kp E        &kp R              &kp T            &kp Y           &kp U              &kp I        &kp O       &kp P
-&hm LGUI A  &hm LALT S  &hm LCTRL D  &hm_shift LSHFT F  &lt 1 G          &mt_tap CAPS H  &hm_shift RSHFT J  &hm RCTRL K  &hm RALT L  &mt RGUI SEMICOLON
-&kp Z       &kp X       &kp C        &kp V              &lt 2 B          &kp N           &kp M              &kp COMMA    &kp PERIOD  &kp SLASH
-                                     &kp SPACE          &kp BACKSPACE    &lt 1 ESCAPE    &kp ENTER
+&kp Q       &kp W       &kp E        &kp R              &kp T            &kp Y         &kp U              &kp I        &kp O       &kp P
+&hm LGUI A  &hm LALT S  &hm LCTRL D  &hm_shift LSHFT F  &lt 1 G          &kp H         &hm_shift RSHFT J  &hm RCTRL K  &hm RALT L  &mt RGUI SEMICOLON
+&kp Z       &kp X       &kp C        &kp V              &lt 2 B          &kp N         &kp M              &kp COMMA    &kp PERIOD  &kp SLASH
+                                     &kp SPACE          &kp BACKSPACE    &lt 1 ESCAPE  &kp ENTER
             >;
         };
 
         fn {
             bindings = <
-&kp F1             &kp F2             &kp F3              &kp F4                    &kp F5    &td_f6_play_pause  &kp F7                &f8_vol_mute        &f9_vol_dn            &f10_vol_up
+&td_f1_caps        &kp F2             &kp F3              &kp F4                    &kp F5    &td_f6_play_pause  &kp F7                &f8_vol_mute        &f9_vol_dn            &f10_vol_up
 &hm LGUI NUMBER_1  &hm LALT NUMBER_2  &hm LCTRL NUMBER_3  &hm_shift LSHFT NUMBER_4  &kp N5    &kp LEFT_ARROW     &hm RSHFT DOWN_ARROW  &hm RCTRL UP_ARROW  &hm RALT RIGHT_ARROW  &hm RCMD F11
 &kp N6             &kp N7             &kp N8              &kp N9                    &kp N0    &kp MINUS          &kp EQUAL             &kp SINGLE_QUOTE    &kp BACKSLASH         &kp GRAVE
                                                           &kp TAB                   &trans    &td_fn_esc         &kp F12
