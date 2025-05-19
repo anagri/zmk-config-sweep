@@ -68,29 +68,6 @@
             label = "HM_SHIFT";
         };
 
-        td_mouse_esc: td_mouse_esc {
-            compatible = "zmk,behavior-tap-dance";
-            label = "TD_MOUSE_ESC";
-            #binding-cells = <0>;
-            bindings = <&kp ESCAPE>, <&tog 2>;
-        };
-
-        td_fn_esc: td_fn_esc {
-            compatible = "zmk,behavior-tap-dance";
-            label = "TD_FN_ESC";
-            #binding-cells = <0>;
-            bindings = <&kp ESCAPE>, <&tog 1>;
-        };
-
-        td_f1_caps: td_f1_caps {
-            compatible = "zmk,behavior-tap-dance";
-            label = "TD_F1_CAPS";
-            #binding-cells = <0>;
-            bindings = <&kp F1>, <&kp CAPSLOCK>;
-
-            tapping-term-ms = <300>;
-        };
-
         td_f12_lclick: td_f12_lclick {
             compatible = "zmk,behavior-tap-dance";
             label = "TD_F12_LCLICK";
@@ -143,10 +120,10 @@
 
         fn {
             bindings = <
-&td_f1_caps        &kp F2             &kp F3              &kp F4                    &kp F5    &td_f6_play_pause  &kp F7                &f8_vol_mute        &f9_vol_dn            &f10_vol_up
+&mt CAPSLOCK F1    &kp F2             &kp F3              &kp F4                    &kp F5    &td_f6_play_pause  &kp F7                &f8_vol_mute        &f9_vol_dn            &f10_vol_up
 &hm LGUI NUMBER_1  &hm LALT NUMBER_2  &hm LCTRL NUMBER_3  &hm_shift LSHFT NUMBER_4  &kp N5    &kp LEFT_ARROW     &hm RSHFT DOWN_ARROW  &hm RCTRL UP_ARROW  &hm RALT RIGHT_ARROW  &hm RCMD F11
 &kp N6             &kp N7             &kp N8              &kp N9                    &kp N0    &kp MINUS          &kp EQUAL             &kp SINGLE_QUOTE    &kp GRAVE             &kp BACKSLASH
-                                                          &kp TAB                   &trans    &td_fn_esc         &td_f12_lclick
+                                                          &kp TAB                   &trans    &trans             &td_f12_lclick
             >;
         };
 
@@ -155,7 +132,7 @@
 &kp NUMBER_2   &bootloader    &trans         &trans             &trans    &trans             &trans            &trans             &bootloader       &trans
 &kp LG(SPACE)  &kp LA(SPACE)  &kp LA(LG(J))  &kp LS(LG(SPACE))  &trans    &mmv MOVE_X(-300)  &mmv MOVE_Y(300)  &mmv MOVE_Y(-300)  &mmv MOVE_X(300)  &msc SCRL_LEFT
 &trans         &trans         &trans         &trans             &trans    &msc SCRL_UP       &mkp LCLK         &mkp RCLK          &msc SCRL_DOWN    &msc SCRL_RIGHT
-                                             &trans             &trans    &td_mouse_esc      &trans
+                                             &trans             &trans    &trans             &trans
             >;
         };
 
