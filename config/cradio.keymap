@@ -82,23 +82,13 @@
             bindings = <&kp ESCAPE>, <&tog 1>;
         };
 
-        mt_tap: mt_tap {
-            compatible = "zmk,behavior-hold-tap";
-            label = "MT_TAP";
-            bindings = <&kp>, <&kp>;
-
-            #binding-cells = <2>;
-            tapping-term-ms = <150>;
-            quick-tap-ms = <100>;
-            flavor = "tap-preferred";
-            retro-tap;
-        };
-
         td_f1_caps: td_f1_caps {
             compatible = "zmk,behavior-tap-dance";
             label = "TD_F1_CAPS";
             #binding-cells = <0>;
             bindings = <&kp F1>, <&kp CAPSLOCK>;
+
+            tapping-term-ms = <300>;
         };
 
         td_f12_lclick: td_f12_lclick {
@@ -106,6 +96,8 @@
             label = "TD_F12_LCLICK";
             #binding-cells = <0>;
             bindings = <&kp F12>, <&mkp LCLK>;
+
+            tapping-term-ms = <300>;
         };
     };
 
