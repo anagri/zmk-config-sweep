@@ -87,8 +87,8 @@
         mouse {
             bindings = <
 &kp CAPS       &trans         &trans         &trans             &trans    &kp C_PLAY_PAUSE   &kp C_STOP        &kp C_MUTE         &kp C_VOL_DN      &kp C_VOL_UP
-&kp LG(SPACE)  &kp LA(SPACE)  &kp LA(LG(J))  &kp LS(LG(SPACE))  &trans    &mmv MOVE_X(-300)  &mmv MOVE_Y(300)  &mmv MOVE_Y(-300)  &mmv MOVE_X(300)  &msc SCRL_LEFT
-&kp NUMBER_2   &trans         &trans         &trans             &trans    &msc SCRL_UP       &mkp LCLK         &mkp RCLK          &msc SCRL_DOWN    &msc SCRL_RIGHT
+&kp LG(SPACE)  &kp LA(SPACE)  &kp LA(LG(J))  &kp LS(LG(SPACE))  &trans    &mmv MOVE_X(-300)  &mmv MOVE_Y(300)  &mmv MOVE_Y(-300)  &mmv MOVE_X(300)  &kp PAGE_UP
+&kp NUMBER_2   &trans         &trans         &trans             &trans    &msc SCRL_UP       &mkp LCLK         &mkp RCLK          &msc SCRL_DOWN    &kp PAGE_DOWN
                                              &bootloader        &trans    &trans             &bootloader
             >;
         };
